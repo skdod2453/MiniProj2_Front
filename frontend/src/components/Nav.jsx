@@ -5,8 +5,8 @@ import {
   Button,
 } from '@chakra-ui/react';
 import { useContext } from 'react';
-import { BiHome } from 'react-icons/bi'
-import {CgProfile} from 'react-icons/cg'
+import { TbHomeHeart } from 'react-icons/tb'
+import { PiFinnTheHumanDuotone } from "react-icons/pi";
 import AuthContext from '../context/AuthContext';
 import AddPost from '../pages/AddPost';
 import NavItem from './NavItem';
@@ -20,14 +20,14 @@ function Nav() {
         color={useColorModeValue('gray.600', 'white')}
         borderRadius={"2xl"}
         spacing={'10'}
-        p={'15px'}
+        p={'10px'}
         pt={{lg:'10vh'}}
         h={{ sm: '20', lg: '95vh' }}
         direction={{ sm: 'row', lg: 'column' }}
         boxShadow={'2xl'}
       >
-        <NavItem description={'Home'} icon={<BiHome/>} path={"/home"}/>
-        <NavItem description={'Profile'} icon={<CgProfile/>} path={`/profile/${user.id}`}/>
+        <NavItem description={'Home'} icon={<TbHomeHeart />} path={"/home"}/>
+        <NavItem description={'Profile'} icon={<PiFinnTheHumanDuotone />} path={`/profile/${user.id}`}/>
         <AddPost/>
 
       
