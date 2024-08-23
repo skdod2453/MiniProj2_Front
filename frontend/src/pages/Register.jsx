@@ -49,7 +49,7 @@ function Register() {
         <VStack p={10} spacing={5}>
           <Stack spacing={6} w={'full'} maxW={'lg'}>
             <Heading fontSize={{ base: '0', md: '5xl', lg: '6xl' }}>
-              <Text
+              <Text color={'pink'}
                 as={'span'}
                 position={'relative'}
                 _after={{
@@ -62,11 +62,11 @@ function Register() {
                   bg: 'pink.500',
                   zIndex: -1,
                 }}>
-                Spring-React
+                💟  Rookies 💟 
               </Text>
               <br />{' '}
-              <Text color={'pink.500'} as={'span'}>
-                Social Media App
+              <Text color={'pink.400'} as={'span'}>
+                Stagram
               </Text>{' '}
             </Heading>
           </Stack>
