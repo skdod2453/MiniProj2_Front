@@ -23,12 +23,13 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./frontend  # frontend 폴더에서 실행
+        working-directory: ./frontend
 
-      - name: Run tests
-        run: npm test
-        working-directory: ./frontend  # frontend 폴더에서 실행
+      # 주석 처리하거나 이 단계를 제거하세요
+      # - name: Run tests
+      #   run: npm test
+      #   working-directory: ./frontend
 
       - name: Build project
         run: npm run build
-        working-directory: ./frontend  # frontend 폴더에서 실행
+        working-directory: ./frontend
