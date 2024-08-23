@@ -14,7 +14,7 @@ import NavItem from './NavItem';
 function Nav() {
   const {user} = useContext(AuthContext)
   return (
-    <Box top={{lg:4}} zIndex={1} w={{ sm: "100%", lg: '30vh' }} position={{ sm:'sticky', lg: 'fixed' }} px={5}>
+    <Box left={{lg:4}} zIndex={1} w={{ sm: "100%", lg: '30vh' }} position={{ sm:'sticky', lg: 'fixed' }} px={5}>
       <Stack
         bg={'white'}
         color={useColorModeValue('gray.600', 'white')}
