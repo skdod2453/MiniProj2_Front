@@ -4,7 +4,7 @@ import './App.css';
 import { AuthProvider } from './context/AuthContext';
 import Register from './pages/Register';
 import Login from './pages/Login';
-//import Home from './pages/Home';
+import Home from './pages/Home';
 //import Profile from './pages/Profile';
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
           <Routes>
             <Route path='/' element={<Register />} />
             <Route path='/login' element={<Login />} />
-            {/*<Route path='/home' element={<Home />} />
-            <Route path='/profile/:userId' element={<Profile />} /> */}
+            <Route path='/home' element={<Home />} />
+            {/*<Route path='/profile/:userId' element={<Profile />} /> */}
           </Routes>
         </AuthProvider>
       </Router>
