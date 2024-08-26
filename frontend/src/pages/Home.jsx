@@ -20,17 +20,21 @@ function Home() {
         const postService = new PostService()
         try {
             if (user.id !== undefined) {
-                const result = await postService.getAllByUserFollowing(user.id, localStorage.getItem("token"))
-                setPosts(result.data)
+                console.log("Fetching posts for user ID:", user.id);
+                const result = await postService.getAllByUserFollowing(user.id, localStorage.getItem("token"));
+                console.log("Posts fetched successfully:", JSON.stringify(result.data, null, 2));
+                setPosts(result.data);
+            } else {
+                console.log("User ID is undefined. Skipping fetch.");
             }
-
         } catch (error) {
-            console.log(error.message)
+            console.log("Error fetching posts:", error.message);
         }
     }, [user.id])
 
     useEffect(() => {
-        getData()
+        console.log("Calling getData to fetch posts.");
+        getData();
     }, [getData])
 
     return (
