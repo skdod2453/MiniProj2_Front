@@ -5,7 +5,7 @@ import { AuthProvider } from './context/AuthContext';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Home from './pages/Home';
-//import Profile from './pages/Profile';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
             <Route path='/' element={<Register />} />
             <Route path='/login' element={<Login />} />
             <Route path='/home' element={<Home />} />
-            {/*<Route path='/profile/:userId' element={<Profile />} /> */}
+            <Route path='/profile/:userId' element={<Profile />} />
           </Routes>
         </AuthProvider>
       </Router>
