@@ -66,7 +66,7 @@ function Profile() {
         getUser()
         checkIsFollowing()
         checkIsOwner()
-    }, [getData, getUser, checkIsFollowing, checkIsOwner])
+    }, [getData, getUser, checkIsFollowing, checkIsOwner, posts])
 
     return (
         <>
