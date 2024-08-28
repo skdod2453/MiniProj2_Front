@@ -6,8 +6,7 @@ import AuthContext from '../context/AuthContext'
 import LikeService from '../services/LikeService'
 import CommentModal from './CommentModal'
 
-function PostCard({ userName, userImage, description, postImage, postId, userId }) {
-
+function PostCard({ userName, userImage, description, postImage, postId, userId, hasImage }) {
 
     const likeService = new LikeService()
     const { user } = useContext(AuthContext)
@@ -39,7 +38,7 @@ function PostCard({ userName, userImage, description, postImage, postId, userId 
         } catch (error) {
             console.log(error)
         }
-    }, [user.id, postId,likes.length])
+    }, [user.id, postId, likes.length])
 
     const getLikes = useCallback(async () => {
         try {
@@ -62,10 +61,8 @@ function PostCard({ userName, userImage, description, postImage, postId, userId 
                 <Flex spacing='4'>
                     <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
                         <Avatar name={userName} src={userImage} />
-
                         <Box>
                             <Heading size='sm'>{userName}</Heading>
-
                         </Box>
                     </Flex>
                 </Flex>
@@ -75,17 +72,15 @@ function PostCard({ userName, userImage, description, postImage, postId, userId 
                     {description}
                 </Text>
             </CardBody>
-            {
+            {hasImage && (  // 서버에서 hasImage가 true인 경우에만 이미지를 렌더링
                 <Image
                     maxW={'md'}
                     maxH={'sm'}
                     objectFit='contain'
                     src={postImage}
                     fallback={null}
-
                 />
-            }
-
+            )}
             <CardFooter
                 justify='space-between'
                 flexWrap='wrap'
@@ -95,16 +90,14 @@ function PostCard({ userName, userImage, description, postImage, postId, userId 
                     },
                 }}
             >
-                {
-                    isLiked ?
-                        <Button onClick={()=>handleUnlike()} flex='1' colorScheme={'pink'} leftIcon={<BiLike />}>
-                            Like {likes.length}
-                        </Button>
-                        : <Button onClick={() => handleLike()} flex='1' variant='ghost' leftIcon={<BiLike />}>
-                            Like {likes.length}
-                        </Button>
+                {isLiked ?
+                    <Button onClick={() => handleUnlike()} flex='1' colorScheme={'pink'} leftIcon={<BiLike />}>
+                        Like {likes.length}
+                    </Button>
+                    : <Button onClick={() => handleLike()} flex='1' variant='ghost' leftIcon={<BiLike />}>
+                        Like {likes.length}
+                    </Button>
                 }
-
                 <CommentModal postId={postId} />
                 <Button flex='1' variant='ghost' leftIcon={<BiShare />}>
                     Share
@@ -114,4 +107,4 @@ function PostCard({ userName, userImage, description, postImage, postId, userId 
     )
 }
 
-export default PostCard
+export default PostCard;

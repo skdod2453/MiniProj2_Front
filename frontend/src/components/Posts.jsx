@@ -24,6 +24,7 @@ function Posts({ posts }) {
                                 postImage={imageUrl + post.id}
                                 postId={post.id}
                                 userId={post.userId}
+                                hasImage={post.hasImage}  // 여기에서 hasImage를 전달
                             />
                         ))
                     )
