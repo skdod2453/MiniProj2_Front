@@ -29,6 +29,7 @@
 ![검색](https://github.com/user-attachments/assets/4c286e30-e852-454b-8a0e-4792d96a1232)
 
 
+## 🙋‍♂️FrontEnd 팀원
 | ![조석훈](https://avatars.githubusercontent.com/u/48306840?v=4) | ![장나영](https://avatars.githubusercontent.com/u/112605030?v=4) | 
 | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
 |             [조석훈](https://github.com/mgs06380)              |              [장나영](https://github.com/skdod2453)               | 
